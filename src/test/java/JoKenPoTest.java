@@ -1,33 +1,33 @@
 
-import junit.framework.Assert;
+import static org.junit.Assert.assertEquals;
 
-import  org.junit.Test;
+import org.junit.Test;
 
 public class JoKenPoTest {
     
     @Test
     public void jogarPedraGanha(){
-        Assert.assertEquals("pedra", JoKenPo.jogar("pedra","tesoura"));
-        Assert.assertEquals("pedra", JoKenPo.jogar("tesoura","pedra"));
+        assertEquals("pedra", JoKenPo.jogar(FormatoDaMao.PEDRA,FormatoDaMao.TESOURA));
+        assertEquals("pedra", JoKenPo.jogar(FormatoDaMao.TESOURA,FormatoDaMao.PEDRA));
     }
     
     @Test
     public void jogarPapelGanha(){
-        Assert.assertEquals("papel", JoKenPo.jogar("papel","pedra"));
-        Assert.assertEquals("papel", JoKenPo.jogar("pedra","papel"));
+        assertEquals("papel", JoKenPo.jogar(FormatoDaMao.PAPEL,FormatoDaMao.PEDRA));
+        assertEquals("papel", JoKenPo.jogar(FormatoDaMao.PEDRA,FormatoDaMao.PAPEL));
     }
 
     @Test
     public void jogarTesouraGanha(){
-        Assert.assertEquals("tesoura", JoKenPo.jogar("tesoura", "papel"));
-        Assert.assertEquals("tesoura", JoKenPo.jogar("papel", "tesoura"));
+        assertEquals("tesoura", JoKenPo.jogar(FormatoDaMao.TESOURA, FormatoDaMao.PAPEL));
+        assertEquals("tesoura", JoKenPo.jogar(FormatoDaMao.PAPEL, FormatoDaMao.TESOURA));
     }
     
     @Test
     public void jogarEmpate(){
-        Assert.assertEquals("empate", JoKenPo.jogar("tesoura","tesoura"));
-        Assert.assertEquals("empate", JoKenPo.jogar("papel","papel"));
-        Assert.assertEquals("empate", JoKenPo.jogar("pedra","pedra"));
+        assertEquals("empate", JoKenPo.jogar(FormatoDaMao.TESOURA,FormatoDaMao.TESOURA));
+        assertEquals("empate", JoKenPo.jogar(FormatoDaMao.PAPEL,FormatoDaMao.PAPEL));
+        assertEquals("empate", JoKenPo.jogar(FormatoDaMao.PEDRA,FormatoDaMao.PEDRA));
     }
     
 }

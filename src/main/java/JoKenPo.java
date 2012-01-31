@@ -1,18 +1,13 @@
+
 public class JoKenPo {
     
-    public static String jogar(String item1, String item2) {
-        String retorno = "empate";
-        
-        if(item1.equals("pedra") && item2.equals("tesoura") || item1.equals("tesoura") && item2.equals("pedra")){
-            retorno = "pedra";
-        }
-        else if(item1.equals("papel") && item2.equals("tesoura") || item1.equals("tesoura") && item2.equals("papel")){
-            retorno = "tesoura";
-        }else if(item1.equals("papel") && item2.equals("pedra") || item1.equals("pedra") && item2.equals("papel")){
-            retorno = "papel";
-        }
-        
-        return retorno;
-    }
-        
+	public static String jogar(FormatoDaMao opcaoDoJogador1, FormatoDaMao opcaoDoJogador2) {
+		if (opcaoDoJogador1 == opcaoDoJogador2)
+			return "empate";
+		
+		if (opcaoDoJogador1.ganhaDa(opcaoDoJogador2) )
+			return opcaoDoJogador1.toString();
+		else
+			return opcaoDoJogador2.toString();
+	}
 }
